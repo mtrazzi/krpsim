@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
   parser.add_argument('file', action="store", type=str, default=None,
                       help="Name of the configuration file.")
-  parser.add_argument('delay', action="store", type=int, default=10,
+  parser.add_argument('delay', action="store", type=float, default=10,
                       help="Maximum time that the solver can use.")
   parser.add_argument('-a', "--algorithm",
                       type=str, default="sgs",

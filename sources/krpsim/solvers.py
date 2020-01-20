@@ -169,7 +169,7 @@ class ParallelSGS(Solver):
         self.update_stocks(j)
         Eg = self.sim.get_elligibles()
 
-    for cycle, job in Ag:
+    for _, job in Ag:
       self.sim.update_stocks(job.needs)
     Cg.sort(key=lambda j: j[0])
     self.ouput(Cg, tg)

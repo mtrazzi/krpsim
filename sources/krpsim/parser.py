@@ -19,9 +19,10 @@ def parse_optimize(line, sim, config):
     occurence = p.findall(line)[0]
     for optimize in occurence.split(';'):
       sim.optimize(optimize)
-  except Exception as e:
-    config['error'] = f"Error while parsing `{line}`\n"
-    config['error'] += f"=====\n{e}\n=====\nExiting..."
+  except Exception:
+    config['error'] = f"=====\n"
+    config['error'] += f"Error while parsing `{line}`\n"
+    config['error'] += f"=====\nExiting..."
 
   return config
 
@@ -32,6 +33,8 @@ def parse_process(line, sim, config):
   try:
     occurence = p.findall(line)[0]
     name, materials, delay = occurence[0], occurence[1], int(occurence[2])
+    if name == '':
+      raise Exception("Empty process name.")
     process = Process(name, delay)
 
     p = REGEX[3]
@@ -69,6 +72,8 @@ def parse_stock(line, sim, config):
   try:
     occurence = p.findall(line)[0]
     name, quantity = occurence[0], int(occurence[1])
+    if name == '':
+      raise Exception("Empty stock name.")
     sim.stock(name, quantity)
     return config
   except Exception:

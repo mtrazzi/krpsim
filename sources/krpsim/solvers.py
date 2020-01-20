@@ -377,6 +377,9 @@ class GeneticAlgorithm(Solver):
     for _ in range(self.mut):
       S = [(n.T, n.j) for n in child[1:]]
 
+      if len(child) < 2:
+        break
+
       idx = check(child[1].T, child[0].stocks(), S)
       if idx == -1:
         idx = random.randint(1, len(child))

@@ -1,17 +1,16 @@
-won# KrpSim
+# KrpSim: 42 Project
 
 About
 -----
->This project introduce us in solving NP-Hard problem.
->
->We will have to create a program that generates a schedule based on limited time and contrained ressources
+>Program generating a task schedule under time/resources constrants.
 
-This is the second project of the Advanced Algorithm branch at School 42 Paris
+>For additional details, see the [project description](https://github.com/mtrazzi/krpsim/blob/master/docs/fr.subject.pdf) (french).
 
-Algorithms
+Implemented Algorithms
 ----------
-<img src="./images/Parallel_SGS.png"/>
-<img src="./images/Genetic_Algorithm_Scheme.png"/>
+- [Parallel Schedule Generation Scheme](./images/Parallel_SGS.png/) as described in [1].
+
+- [Genetic Algorithm Scheme](./images/Genetic_Algorithm_Scheme.png) as described in [1]
 
 Installation
 ------------
@@ -137,8 +136,10 @@ Evaluating: 40:livraison
 Trace completed, no error detected.
 ```
 
-Acknowledgment
+References
 --------------
-Sonke Hartmann - Project Scheduling under Limited Resources (1999)
+[1] Sonke Hartmann - Project Scheduling under Limited Resources (1999)
 
-##### Project done in 2020
+Authors
+--------------
+Project by @mtrazzi & @kcosta42 done in two weeks in January 2020 
